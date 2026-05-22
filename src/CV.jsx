@@ -65,11 +65,11 @@ const INITIAL_DATA = {
       role: "Freelance Software Developer",
       period: "09/2024 – 04/2026",
       bullets: [
-        "Tablet UI (12/2025 – 04/2026)",
+        "# Tablet UI (12/2025 – 04/2026)",
         "Built a new tablet-first web UI from scratch. Now used by clients in underground mines to track points of interest and problem spots in their quarries. Led UX decisions view-by-view, reasoning through field usage with the product owners and driving the layout direction. Managed testing and client hand-off.",
-        "Real-time accuracy validation (08/2025 – 11/2025)",
+        "# Real-time accuracy validation (08/2025 – 11/2025)",
         "Designed and shipped a full-stack feature that lets dashboard users validate their RTLS measurement accuracy in real time. Worked with the product owners to define the validation workflow.",
-        "RTLS web dashboard (09/2024 – 11/2024)",
+        "# RTLS web dashboard (09/2024 – 11/2024)",
         "Worked on the dashboard UI used by clients to monitor real-time location systems. Identified UI gaps and proposed UX improvements to the product owners. Plus bug fixes and feature work across the dashboard.",
         "Tech Stack: React, Django, Wagtail, Postgres",
       ],
@@ -161,19 +161,8 @@ const INITIAL_DATA = {
       degree: "High School, Division of English",
       period: "09/2018 – 06/2021",
       bullets: [
-        "GPA: 4.5/5.0 (5 is the highest)",
-        "Cambridge English: Advanced C1 (2021)",
-        "Entrepreneurial Skills Pass",
-        "Vice President of Student Council, Java programming classes, Event Management",
+        "Cambridge English: Advanced C1. Vice President of Student Council. Java programming classes.",
       ],
-    },
-    {
-      id: 4,
-      institution: "Rocca Al Mare School",
-      location: "Tallinn, Estonia",
-      degree: "Private Middle School",
-      period: "09/2009 – 06/2018",
-      bullets: ["GPA: 4.9/5.0 (5 is the highest)"],
     },
   ],
   languages: [
@@ -183,19 +172,31 @@ const INITIAL_DATA = {
     { lang: "Spanish", level: "A1 (Beginner)" },
   ],
   skills: {
-    "Frameworks":
-      "Node.js · Deno · React · Vue · Next · Express · Ethereum Smart Contracts · .NET · Laravel · Razor",
-    "Coding Languages":
-      "TypeScript · JavaScript · SQL · Solidity · C# · Python · Java · PHP",
-    "UI Libraries": "NuxtUI · NextUI · Shadcn",
-    "Databases": "PostgreSQL · MySQL · MongoDB · RavenDB",
-    "Testing & Other": "Mocha · Chai · Jest · Docker",
+    "Languages": "TypeScript · JavaScript · C# · Python · SQL · Solidity",
+    "Backend":
+      "Deno (Hono) · Node.js · .NET · Django · Express · Laravel · Ethereum Smart Contracts",
+    "Frontend":
+      "React · React Native · Next.js · Vue · Nuxt · NuxtUI · Shadcn · Razor",
+    "Data & Infra":
+      "PostgreSQL · MongoDB · RavenDB · AWS · Docker · self-managed Linux · GitHub Actions",
+    "Product & AI":
+      "Stripe · BetterAuth · Postmark · Mixpanel · Apple/Google Wallet · LLM training & RLHF-style review",
   },
   references: [
     {
-      name: "Anni Sild",
-      company: "Baltic Computer Systems",
-      email: "anni.sild@bcs.ee",
+      name: "Aleksander Piirimees",
+      company: "Addy (Co-founder)",
+      email: "aleksander@addy.ee",
+    },
+    {
+      name: "Margus Mullamaa",
+      company: "Ela (Founder)",
+      email: "margus.mullamaa@ela.live",
+    },
+    {
+      name: "Indrek Ruiso",
+      company: "ELIKO",
+      email: "indrek.ruiso@eliko.ee",
     },
     {
       name: "Markkus Millend",
@@ -330,23 +331,30 @@ function ExpEntry({ entry, onChange, onDelete }) {
         </button>
       </div>
       <ul className="bullets">
-        {entry.bullets.map((b, i) => (
-          <li key={i} className="bullet-row">
-            <Editable
-              value={b}
-              onChange={(v) => updateBullet(i, v)}
-              tag="span"
-              className="bullet-text"
-            />
-            <button
-              className="del-bullet"
-              onClick={() => deleteBullet(i)}
-              title="Remove"
+        {entry.bullets.map((b, i) => {
+          const isSubtitle = b.startsWith("# ");
+          return (
+            <li
+              key={i}
+              className={isSubtitle ? "bullet-subtitle-row" : "bullet-row"}
             >
-              −
-            </button>
-          </li>
-        ))}
+              <Editable
+                value={isSubtitle ? b.slice(2) : b}
+                onChange={(v) =>
+                  updateBullet(i, isSubtitle ? `# ${v}` : v)}
+                tag="span"
+                className={isSubtitle ? "bullet-subtitle" : "bullet-text"}
+              />
+              <button
+                className="del-bullet"
+                onClick={() => deleteBullet(i)}
+                title="Remove"
+              >
+                −
+              </button>
+            </li>
+          );
+        })}
       </ul>
       <button className="add-bullet" onClick={addBullet}>+ add point</button>
     </div>
@@ -408,23 +416,30 @@ function EduEntry({ entry, onChange, onDelete }) {
         </button>
       </div>
       <ul className="bullets">
-        {entry.bullets.map((b, i) => (
-          <li key={i} className="bullet-row">
-            <Editable
-              value={b}
-              onChange={(v) => updateBullet(i, v)}
-              tag="span"
-              className="bullet-text"
-            />
-            <button
-              className="del-bullet"
-              onClick={() => deleteBullet(i)}
-              title="Remove"
+        {entry.bullets.map((b, i) => {
+          const isSubtitle = b.startsWith("# ");
+          return (
+            <li
+              key={i}
+              className={isSubtitle ? "bullet-subtitle-row" : "bullet-row"}
             >
-              −
-            </button>
-          </li>
-        ))}
+              <Editable
+                value={isSubtitle ? b.slice(2) : b}
+                onChange={(v) =>
+                  updateBullet(i, isSubtitle ? `# ${v}` : v)}
+                tag="span"
+                className={isSubtitle ? "bullet-subtitle" : "bullet-text"}
+              />
+              <button
+                className="del-bullet"
+                onClick={() => deleteBullet(i)}
+                title="Remove"
+              >
+                −
+              </button>
+            </li>
+          );
+        })}
       </ul>
       <button className="add-bullet" onClick={addBullet}>+ add point</button>
     </div>
@@ -565,6 +580,16 @@ export default function CV() {
           display: flex; align-items: baseline; gap: 6px;
           font-size: 12px; color: #2c2c2c; margin-bottom: 6px;
           list-style: disc;
+        }
+        .bullet-subtitle-row {
+          display: flex; align-items: baseline; gap: 6px;
+          list-style: none; margin-left: -16px;
+          margin-top: 10px; margin-bottom: 4px;
+        }
+        .bullet-subtitle-row:first-child { margin-top: 0; }
+        .bullet-subtitle {
+          font-size: 12px; font-weight: 500; color: #777;
+          font-style: italic;
         }
         .bullet-text { flex: 1; }
 
@@ -830,7 +855,7 @@ export default function CV() {
                     tag="span"
                     className="meta"
                   />
-                  {" – "}
+                  {"  "}
                   <Editable
                     value={r.email}
                     onChange={(v) =>
