@@ -6,7 +6,7 @@ const INITIAL_DATA = {
   name: "JAN JÜRGEN LUZGIN",
   title: "Founding Engineer & Product Builder",
   summary:
-    "Founding engineer on two early-stage products. I take products from blank repo to launch and like working close to users. Currently based in Vienna.",
+    "Founding engineer on two early-stage products. I take products from blank repo to launch and like working close to users.",
   contact: {
     phone: "+372 56560089",
     email: "jjluzgin@gmail.com",
@@ -21,12 +21,14 @@ const INITIAL_DATA = {
       location: "Remote",
       role: "Founding Engineer",
       period: "08/2025 – Present",
+      tech:
+        "Deno (Hono) · PostgreSQL · Vue/Nuxt · Stripe · BetterAuth · Postmark · self-managed cloud",
+      link: "addy.ee",
       bullets: [
         "Solo founding engineer on a product that lets businesses design, distribute, validate, and track digital Apple and Google wallet passes (discount, stamp, and cash-back cards).",
         "Built the product from zero to launch.",
         "Owned every decision: backend and deployment architecture, API design, tech stack, the dashboard UI for creating and managing passes, and a separate QR-code scanner web app for in-store pass validation.",
         "Set up and secured the private cloud deployment myself, including all DevOps and release pipelines.",
-        "Tech Stack: Deno (Hono), PostgreSQL, Vue/Nuxt, Stripe, BetterAuth, Postmark, self-managed cloud",
       ],
     },
     {
@@ -35,14 +37,15 @@ const INITIAL_DATA = {
       location: "Remote",
       role: "Founding Engineer & Tech Lead",
       period: "08/2025 – Present",
+      tech: "C# · Next.js · React Native · PostgreSQL · AWS · Mixpanel",
+      link: "ela.live",
       bullets: [
-        "Joined an existing product after its original tech team departed. Ela is a mobile app for discovering public events nearby through a Tinder-style swipe UI.",
-        "Inherited a messy stack I had to learn fast: C# backend, Next.js organizer dashboard, React Native app, PostgreSQL, Mixpanel, and AWS.",
+        "Ela is a mobile app for discovering public events nearby through a Tinder-style swipe UI.",
+        "Joined after the original tech team departed, inheriting a messy stack across mobile, dashboard, backend, and AWS infra.",
         "Stabilized and modernized the codebase across the board.",
         "Rebuilt the team from scratch. Hired two developers and two marketing/data team members.",
         "Led the rebuild of the backend and dashboard to support Event Series and Festivals on top of the original single-day Event model. Updated the mobile app to match.",
         "Day-to-day focus on the dashboard and backend. Touch the React Native app mainly for user-session and event tracking.",
-        "Tech Stack: C#, Next.js, React Native, PostgreSQL, AWS, Mixpanel",
       ],
     },
     {
@@ -51,11 +54,12 @@ const INITIAL_DATA = {
       location: "Switzerland (Remote)",
       role: "Freelance Software Developer",
       period: "01/2025 – 05/2025",
+      tech: "Deno · TypeScript · Vue.js · Bunny Net · NuxtUI",
+      link: "walruscdn.com",
       bullets: [
         "Built and shipped a public CDN service for the Walrus blockchain network, with a launch landing page at walruscdn.com.",
         "Implemented latency measurement at every edge location. The data was used by the team to evaluate routing performance.",
         "Owned the launch site end-to-end.",
-        "Tech Stack: Deno, TypeScript, Vue.js, Bunny Net, NuxtUI",
       ],
     },
     {
@@ -64,6 +68,7 @@ const INITIAL_DATA = {
       location: "Tallinn, Estonia",
       role: "Freelance Software Developer",
       period: "09/2024 – 04/2026",
+      tech: "React · Django · Wagtail · PostgreSQL",
       bullets: [
         "# Tablet UI (12/2025 – 04/2026)",
         "Built a new tablet-first web UI from scratch. Now used by clients in underground mines to track points of interest and problem spots in their quarries. Led UX decisions view-by-view, reasoning through field usage with the product owners and driving the layout direction. Managed testing and client hand-off.",
@@ -71,7 +76,6 @@ const INITIAL_DATA = {
         "Designed and shipped a full-stack feature that lets dashboard users validate their RTLS measurement accuracy in real time. Worked with the product owners to define the validation workflow.",
         "# RTLS web dashboard (09/2024 – 11/2024)",
         "Worked on the dashboard UI used by clients to monitor real-time location systems. Identified UI gaps and proposed UX improvements to the product owners. Plus bug fixes and feature work across the dashboard.",
-        "Tech Stack: React, Django, Wagtail, Postgres",
       ],
     },
     {
@@ -80,12 +84,12 @@ const INITIAL_DATA = {
       location: "Tallinn, Estonia",
       role: "Junior Full-Stack Developer",
       period: "02/2024 – 11/2024",
+      tech: ".NET (C#) · Razor · React · RavenDB · PostgreSQL",
       bullets: [
         "Shipped features now live in production on ETIS, Estonia's national research information system, used by researchers, ministries, and funding bodies.",
         "Designed and built a family-tree relation system covering 10,000+ research projects.",
         "Modernized the legacy platform with new React UI components.",
         "Commended by the team for active communication and meaningful planning input.",
-        "Tech Stack: .Net (C#), Razor, React, Raven DB, PostgreSQL",
       ],
     },
     {
@@ -94,10 +98,10 @@ const INITIAL_DATA = {
       location: "Tallinn, Estonia",
       role: "Intern Full-Stack Developer",
       period: "03/2023 – 06/2023",
+      tech: "Laravel (PHP) · React · PostgreSQL",
       bullets: [
         "Built and maintained an internal tool for managing the team's workbase.",
         "Bug fixes and full-stack feature work on the wider intranet.",
-        "Tech Stack: Laravel (PHP), React, PostgreSQL",
       ],
     },
     {
@@ -149,7 +153,6 @@ const INITIAL_DATA = {
       degree: "Erasmus Semester in Computer Science",
       period: "09/2023 – 02/2024",
       bullets: [
-        "Erasmus semester",
         "International connections from Portugal, Netherlands and Italy",
         "Course List: Algorithms & Data Structures, Cyber Security, Artificial Intelligence (AI Agents and automated problem solving)",
       ],
@@ -166,8 +169,8 @@ const INITIAL_DATA = {
     },
   ],
   languages: [
-    { lang: "English", level: "C1 (Native)" },
-    { lang: "Estonian", level: "C2 (Native)" },
+    { lang: "English", level: "Native (C1 CAE)" },
+    { lang: "Estonian", level: "Native" },
     { lang: "Russian", level: "A2 (Beginner)" },
     { lang: "Spanish", level: "A1 (Beginner)" },
   ],
@@ -214,7 +217,8 @@ const blankExp = () => ({
   location: "City, Country",
   role: "Job Title",
   period: "MM/YYYY – MM/YYYY",
-  bullets: ["Responsibility or achievement", "Tech Stack: ..."],
+  tech: "Tech · Stack · Here",
+  bullets: ["Responsibility or achievement"],
 });
 
 const blankEdu = () => ({
@@ -340,8 +344,7 @@ function ExpEntry({ entry, onChange, onDelete }) {
             >
               <Editable
                 value={isSubtitle ? b.slice(2) : b}
-                onChange={(v) =>
-                  updateBullet(i, isSubtitle ? `# ${v}` : v)}
+                onChange={(v) => updateBullet(i, isSubtitle ? `# ${v}` : v)}
                 tag="span"
                 className={isSubtitle ? "bullet-subtitle" : "bullet-text"}
               />
@@ -356,6 +359,29 @@ function ExpEntry({ entry, onChange, onDelete }) {
           );
         })}
       </ul>
+      {entry.link !== undefined && (
+        <div className="entry-link">
+          <a
+            href={`https://${entry.link.replace(/^https?:\/\//, "")}`}
+            onClick={(e) => e.preventDefault()}
+          >
+            <Editable
+              value={entry.link}
+              onChange={(v) => onChange({ ...entry, link: v })}
+              tag="span"
+            />
+          </a>
+        </div>
+      )}
+      {entry.tech !== undefined && (
+        <div className="entry-tech">
+          <Editable
+            value={entry.tech}
+            onChange={(v) => onChange({ ...entry, tech: v })}
+            tag="span"
+          />
+        </div>
+      )}
       <button className="add-bullet" onClick={addBullet}>+ add point</button>
     </div>
   );
@@ -425,8 +451,7 @@ function EduEntry({ entry, onChange, onDelete }) {
             >
               <Editable
                 value={isSubtitle ? b.slice(2) : b}
-                onChange={(v) =>
-                  updateBullet(i, isSubtitle ? `# ${v}` : v)}
+                onChange={(v) => updateBullet(i, isSubtitle ? `# ${v}` : v)}
                 tag="span"
                 className={isSubtitle ? "bullet-subtitle" : "bullet-text"}
               />
@@ -441,6 +466,29 @@ function EduEntry({ entry, onChange, onDelete }) {
           );
         })}
       </ul>
+      {entry.link !== undefined && (
+        <div className="entry-link">
+          <a
+            href={`https://${entry.link.replace(/^https?:\/\//, "")}`}
+            onClick={(e) => e.preventDefault()}
+          >
+            <Editable
+              value={entry.link}
+              onChange={(v) => onChange({ ...entry, link: v })}
+              tag="span"
+            />
+          </a>
+        </div>
+      )}
+      {entry.tech !== undefined && (
+        <div className="entry-tech">
+          <Editable
+            value={entry.tech}
+            onChange={(v) => onChange({ ...entry, tech: v })}
+            tag="span"
+          />
+        </div>
+      )}
       <button className="add-bullet" onClick={addBullet}>+ add point</button>
     </div>
   );
@@ -547,6 +595,7 @@ export default function CV() {
           font-size: 11.5px; color: #444;
           display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px;
         }
+        .cv-contact a, .entry-link a { color: inherit; text-decoration: inherit; }
         .cv-contact span::before { content: "•"; margin-right: 16px; color: #bbb; }
         .cv-contact span:first-child::before { content: ""; margin: 0; }
 
@@ -575,6 +624,16 @@ export default function CV() {
         .role { font-size: 13px; font-weight: 500; color: #1c1c1c; }
         .meta { font-size: 11.5px; color: #777; }
 
+        .entry-link {
+          text-decoration: underline;
+          text-decoration-color: #ccc;
+          text-underline-offset: 3px;
+        }
+        .entry-tech, .entry-link {
+          font-size: 12px; color: #7a7a7a; font-style: italic;
+          margin: 4px 0 0 16px;
+          letter-spacing: .02em;
+        }
         .bullets { padding-left: 16px; margin-top: 4px; }
         .bullet-row {
           display: flex; align-items: baseline; gap: 6px;
@@ -728,8 +787,15 @@ export default function CV() {
               />
             </div>
             <div className="cv-contact">
-              {Object.entries(data.contact).map(([k, v]) => (
-                <span key={k}>
+              {Object.entries(data.contact).map(([k, v]) => {
+                const href = k === "email"
+                  ? `mailto:${v}`
+                  : k === "phone"
+                  ? `tel:${v.replace(/\s/g, "")}`
+                  : (k === "github" || k === "linkedin")
+                  ? `https://${v.replace(/^https?:\/\//, "")}`
+                  : null;
+                const editable = (
                   <Editable
                     value={v}
                     onChange={(val) =>
@@ -738,8 +804,19 @@ export default function CV() {
                         contact: { ...d.contact, [k]: val },
                       }))}
                   />
-                </span>
-              ))}
+                );
+                return (
+                  <span key={k}>
+                    {href
+                      ? (
+                        <a href={href} onClick={(e) => e.preventDefault()}>
+                          {editable}
+                        </a>
+                      )
+                      : editable}
+                  </span>
+                );
+              })}
             </div>
           </div>
 
@@ -854,8 +931,7 @@ export default function CV() {
                       })}
                     tag="span"
                     className="meta"
-                  />
-                  {"  "}
+                  />{"  "}
                   <Editable
                     value={r.email}
                     onChange={(v) =>
