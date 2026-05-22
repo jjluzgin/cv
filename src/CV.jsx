@@ -5,6 +5,8 @@ import { useState } from "react";
 const INITIAL_DATA = {
   name: "JAN JÜRGEN LUZGIN",
   title: "Founding Engineer & Product Builder",
+  summary:
+    "Founding engineer on two early-stage products. I take products from blank repo to launch and like working close to users. Currently based in Vienna.",
   contact: {
     phone: "+372 56560089",
     email: "jjluzgin@gmail.com",
@@ -13,6 +15,36 @@ const INITIAL_DATA = {
     location: "Vienna, Austria",
   },
   experience: [
+    {
+      id: 101,
+      company: "Addy",
+      location: "Remote",
+      role: "Founding Engineer",
+      period: "08/2025 – Present",
+      bullets: [
+        "Solo founding engineer on a product that lets businesses design, distribute, validate, and track digital Apple and Google wallet passes (discount, stamp, and cash-back cards).",
+        "Built the product from zero to launch.",
+        "Owned every decision: backend and deployment architecture, API design, tech stack, the dashboard UI for creating and managing passes, and a separate QR-code scanner web app for in-store pass validation.",
+        "Set up and secured the private cloud deployment myself, including all DevOps and release pipelines.",
+        "Tech Stack: Deno (Hono), PostgreSQL, Vue/Nuxt, Stripe, BetterAuth, Postmark, self-managed cloud",
+      ],
+    },
+    {
+      id: 102,
+      company: "Ela",
+      location: "Remote",
+      role: "Founding Engineer & Tech Lead",
+      period: "08/2025 – Present",
+      bullets: [
+        "Joined an existing product after its original tech team departed. Ela is a mobile app for discovering public events nearby through a Tinder-style swipe UI.",
+        "Inherited a messy stack I had to learn fast: C# backend, Next.js organizer dashboard, React Native app, PostgreSQL, Mixpanel, and AWS.",
+        "Stabilized and modernized the codebase across the board.",
+        "Rebuilt the team from scratch. Hired two developers and two marketing/data team members.",
+        "Led the rebuild of the backend and dashboard to support Event Series and Festivals on top of the original single-day Event model. Updated the mobile app to match.",
+        "Day-to-day focus on the dashboard and backend. Touch the React Native app mainly for user-session and event tracking.",
+        "Tech Stack: C#, Next.js, React Native, PostgreSQL, AWS, Mixpanel",
+      ],
+    },
     {
       id: 1,
       company: "Graphyte Labs",
@@ -35,13 +67,11 @@ const INITIAL_DATA = {
       bullets: [
         "Tablet UI (12/2025 – 04/2026)",
         "Built a new tablet-first web UI from scratch. Now used by clients in underground mines to track points of interest and problem spots in their quarries. Led UX decisions view-by-view, reasoning through field usage with the product owners and driving the layout direction. Managed testing and client hand-off.",
-        "",
         "Real-time accuracy validation (08/2025 – 11/2025)",
         "Designed and shipped a full-stack feature that lets dashboard users validate their RTLS measurement accuracy in real time. Worked with the product owners to define the validation workflow.",
-        "",
         "RTLS web dashboard (09/2024 – 11/2024)",
         "Worked on the dashboard UI used by clients to monitor real-time location systems. Identified UI gaps and proposed UX improvements to the product owners. Plus bug fixes and feature work across the dashboard.",
-        "Tech Stack: Django, Wagtail, Python",
+        "Tech Stack: React, Django, Wagtail, Postgres",
       ],
     },
     {
@@ -493,6 +523,11 @@ export default function CV() {
           font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
           color: #777; margin: 4px 0 10px;
         }
+        .cv-summary {
+          font-size: 12px; color: #444; line-height: 1.55;
+          max-width: 560px; margin: 0 auto 12px;
+          font-style: italic;
+        }
         .cv-contact {
           font-size: 11.5px; color: #444;
           display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px;
@@ -528,7 +563,7 @@ export default function CV() {
         .bullets { padding-left: 16px; margin-top: 4px; }
         .bullet-row {
           display: flex; align-items: baseline; gap: 6px;
-          font-size: 12px; color: #2c2c2c; margin-bottom: 2px;
+          font-size: 12px; color: #2c2c2c; margin-bottom: 6px;
           list-style: disc;
         }
         .bullet-text { flex: 1; }
@@ -658,6 +693,13 @@ export default function CV() {
               <Editable
                 value={data.title}
                 onChange={(v) => setData((d) => ({ ...d, title: v }))}
+              />
+            </div>
+            <div className="cv-summary">
+              <Editable
+                value={data.summary}
+                onChange={(v) => setData((d) => ({ ...d, summary: v }))}
+                multiline
               />
             </div>
             <div className="cv-contact">
