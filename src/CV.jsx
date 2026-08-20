@@ -4,9 +4,9 @@ import { useState } from "react";
 
 const INITIAL_DATA = {
   name: "JAN JÜRGEN LUZGIN",
-  title: "Founding Engineer & Product Builder",
+  title: "Forward Deployed Engineer",
   summary:
-    "Founding engineer on two early-stage products. I take products from blank repo to launch and like working close to users.",
+    "I'm comfortable owning a whole stack, and just as comfortable talking to the customers. I've built and launched two products end to end, hired and led the team on one of them, and I like being close to the users, not two layers away from them.",
   contact: {
     phone: "+372 56560089",
     email: "jjluzgin@gmail.com",
