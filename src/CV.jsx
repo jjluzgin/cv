@@ -6,7 +6,7 @@ const INITIAL_DATA = {
   name: "JAN JÜRGEN LUZGIN",
   title: "Forward Deployed Engineer",
   summary:
-    "I'm comfortable owning a whole stack, and just as comfortable talking to the customers. I've built and launched two products end to end, hired and led the team on one of them, and I like being close to the users, not two layers away from them.",
+    "I'm comfortable owning a whole stack, and just as comfortable talking to the customers. I've built and launched two products end to end, hired and led the team on one of them, and I like being close to the user instead of hiding behind communication layers.",
   contact: {
     phone: "+372 56560089",
     email: "jjluzgin@gmail.com",
